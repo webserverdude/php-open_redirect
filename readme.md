@@ -6,38 +6,28 @@ This repository contains a simple PHP page with an intentionally added open redi
 
 **Important: Do not deploy this code in a production environment!** This code contains a security vulnerability that can be exploited by malicious actors. It is intended for educational purposes only to demonstrate the concept of open redirect vulnerabilities and should be used responsibly.
 
-## Usage
+## Usage with Nginx Web Server
 
-1. Clone this repository to your local machine:
+1. Ensure you have Nginx installed on your system. If not, you can install it using your package manager or by following the official installation instructions.
 
-    ```bash
-    git clone https://github.com/your_username/open-redirect-vulnerability.git
-    ```
-
-2. Navigate to the repository directory:
+2. Clone this repository to your server:
 
     ```bash
-    cd open-redirect-vulnerability
+    git clone https://github.com/webserverdude/php-open_redirect.git
     ```
 
-3. Start a local web server. For example, using PHP's built-in server:
+3. Move the repository directory to your Nginx web root directory.
 
-    ```bash
-    php -S localhost:8000
-    ```
+4. Update your Nginx configuration to serve the open_redirect.php page. 
 
-4. Open your web browser and visit `http://localhost:8000/open_redirect.php?url=<target_url>`, replacing `<target_url>` with the URL you want to redirect to.
+5. Restart Nginx to apply the changes.
+
+6. Now, you can access the vulnerable PHP page in your web browser. Visit `http://localhost/open_redirect.php?url=<target_url>`, replacing `<target_url>` with the URL you want to redirect to.
 
 ## Example
 
 To demonstrate the vulnerability, you can use the provided PHP page by appending a `url` parameter with a target URL. For example:
 
-`http://localhost:8000/open_redirect.php?url=https://www.google.com`
+`http://localhost/open_redirect.php?url=https://www.google.com`
 
-## Contributing
-
-Contributions to improve the code or add educational content about security vulnerabilities are welcome! Please open an issue or pull request to contribute.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Remember, exercise caution when running vulnerable code and avoid deploying it in a production environment.
