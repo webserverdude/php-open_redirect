@@ -8,7 +8,7 @@ This repository contains a simple PHP page with an intentionally added open redi
 
 ## Usage with Nginx Web Server
 
-1. Ensure you have Nginx installed on your system. If not, you can install it using your package manager or by following the official installation instructions.
+1. Ensure you have Nginx and PHP-FPM (PHP FastCGI Process Manager) installed and configured on your system. If not, you can install it using your package manager or by following the official installation instructions.
 
 2. Clone this repository to your server:
 
